@@ -6,7 +6,7 @@ const testimonials = [
     quote:
       "Leevy is one of the most talented engineers I've worked with. His attention to detail and ability to translate complex requirements into elegant solutions is remarkable.",
     author: "Sarah Chen",
-    role: "CTO, Tech Innovators Inc.",
+    role: "CEO, Move Different.",
     avatar:
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop",
   },

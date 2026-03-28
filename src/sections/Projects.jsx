@@ -11,9 +11,9 @@ const projects = [
     github: "#",
   },
   {
-    title: "E-Commerce Platform",
+    title: "Social Media Managment Platform",
     description:
-      "A full-featured e-commerce solution with inventory management, payment processing, and analytics dashboard.",
+      "A full-featured social media management solution which uses AI to help you manage and boost your ideas. Also it allows you to manage all your social networks and profiles with one tool.",
     image: "/projects/project2.png",
     tags: ["Next.js", "Stripe", "PostgreSQL", "Tailwind"],
     link: "#",
