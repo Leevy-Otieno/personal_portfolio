@@ -93,8 +93,8 @@ export const Hero = () => {
               </h1>
               <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-200">
                 Hi, I'm Leevy Otieno — a software engineer specializing in
-                React, Next.js, and TypeScript. I build scalable, performant web
-                applications that users love.
+                Python , Django React, Next.js, and TypeScript. I build scalable,
+                performant web applications that users love.
               </p>
             </div>
 
@@ -109,7 +109,7 @@ export const Hero = () => {
                   download
                   className="inline-flex items-center gap-2"
                 >
-                  <span>Download CV</span>
+                  <span>Download CV </span>
                 </a>
               </AnimatedBorderButton>
             </div>
