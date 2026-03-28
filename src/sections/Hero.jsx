@@ -6,10 +6,14 @@ import {
   Linkedin,
   Twitter,
   Download,
+  Instagram,
 } from "lucide-react";
 import { AnimatedBorderButton } from "../components/AnimatedBorderButton";
 
 const skills = [
+  "Python",
+  "Django",
+  "Wordpress",
   "React",
   "Next.js",
   "TypeScript",
@@ -17,17 +21,18 @@ const skills = [
   "GraphQL",
   "PostgreSQL",
   "MongoDB",
+  "MySQL",
   "Redis",
   "Docker",
   "AWS",
   "Vercel",
   "Tailwind CSS",
   "Prisma",
-  "Jest",
-  "Cypress",
+
   "Figma",
   "Git",
   "GitHub Actions",
+  "Python",
 ];
 
 export const Hero = () => {
@@ -76,12 +81,14 @@ export const Hero = () => {
             {/* Headline */}
             <div className="space-y-4">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in animation-delay-100">
-                Crafting <span className="text-primary glow-text">digital</span>
+                <span className="text-primary glow-text">
+                  Code With Purpose
+                </span>
                 <br />
-                experiences with
+                deploy with
                 <br />
                 <span className="font-serif italic font-normal text-white">
-                  precision.
+                  purpose.
                 </span>
               </h1>
               <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-200">
@@ -97,23 +104,30 @@ export const Hero = () => {
                 Contact Me <ArrowRight className="w-5 h-5" />
               </Button>
               <AnimatedBorderButton>
-  <a
-    href="/cv.pdf"
-    download
-    className="inline-flex items-center gap-2"
-  >
-    <span>Download CV</span>
-  </a>
-</AnimatedBorderButton>
+                <a
+                  href="/cv.pdf"
+                  download
+                  className="inline-flex items-center gap-2"
+                >
+                  <span>Download CV</span>
+                </a>
+              </AnimatedBorderButton>
             </div>
 
             {/* Social Links */}
             <div className="flex items-center gap-4 animate-fade-in animation-delay-400">
               <span className="text-sm text-muted-foreground">Follow me: </span>
               {[
-                { icon: Github, href: "#" },
-                { icon: Linkedin, href: "#" },
+                { icon: Github, href: "https://github.com/Leevy-Otieno" },
+                {
+                  icon: Linkedin,
+                  href: "https://www.linkedin.com/in/leevy-otieno-22a3ab279/",
+                },
                 { icon: Twitter, href: "#" },
+                {
+                  icon: Instagram,
+                  href: "https://www.instagram.com/code.with.leevy/",
+                },
               ].map((social, idx) => (
                 <a
                   key={idx}
