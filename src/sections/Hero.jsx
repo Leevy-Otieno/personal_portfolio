@@ -93,8 +93,8 @@ export const Hero = () => {
               </h1>
               <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-200">
                 Hi, I'm Leevy Otieno — a software engineer specializing in
-                Python , Django React, Next.js, and TypeScript. I build scalable,
-                performant web applications that users love.
+                Python , Django React, Next.js, and TypeScript. I build
+                scalable, performant web applications that users love.
               </p>
             </div>
 
@@ -151,7 +151,7 @@ export const Hero = () => {
               />
               <div className="relative glass rounded-3xl p-2 glow-border">
                 <img
-                  src="/profile-photo.jpg"
+                  src="/Profile1.jpeg"
                   alt="Leevy Otieno"
                   className="w-full aspect-[4/5] object-cover rounded-2xl"
                 />
