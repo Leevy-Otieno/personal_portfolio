@@ -20,20 +20,20 @@ const projects = [
     github: "#",
   },
   {
-    title: "AI Writing Assistant",
+    title: "Post Nexus",
     description:
-      "An intelligent writing tool powered by GPT-4, helping users create better content faster.",
-    image: "/projects/project3.png",
+      "An intelligent Social Media management tools which  helps users create better content faster.",
+    image: "/projects/postnexus.png",
     tags: ["React", "OpenAI", "Python", "FastAPI"],
     link: "#",
     github: "#",
   },
   {
-    title: "Project Management Tool",
+    title: "RentAll's",
     description:
-      "A collaborative workspace for teams with real-time updates, task tracking, and integrations.",
+      "A Real estaet platofrom which allows users to find their homesteatds any where regardless of their position, or price. It helps users found affordable housing.",
     image: "/projects/project4.png",
-    tags: ["Next.js", "Socket.io", "MongoDB", "Redis"],
+    tags: ["React.js", "MongoDB"],
     link: "#",
     github: "#",
   },

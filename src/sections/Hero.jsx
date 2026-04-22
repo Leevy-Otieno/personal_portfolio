@@ -106,7 +106,7 @@ export const Hero = () => {
               </Button>
               <AnimatedBorderButton>
                 <a
-                  href="/cv.pdf"
+                  href="/Leevy_Otieno cv.docx"
                   download
                   className="inline-flex items-center gap-2"
                 >
