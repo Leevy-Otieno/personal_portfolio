@@ -2,13 +2,13 @@ import { ArrowUpRight, Github } from "lucide-react";
 import { AnimatedBorderButton } from "@/components/AnimatedBorderButton";
 const projects = [
   {
-    title: "Fintech Dashboard",
+    title: "ChallengeX",
     description:
-      "A comprehensive financial analytics platform with real-time data visualization, portfolio management, and AI-powered insights.",
+      "An open-source, interactive competitive programming platform where developers can tackle coding challenges, climb the leaderboards, form groups, and track their progress via a personalized dashboard. Think LeetCode, but built for community and competition.",
     image: "/projects/project1.png",
     tags: ["React", "Typescript", "NodeJS"],
-    link: "#",
-    github: "#",
+    link: "https://stacke-battleke-frontend.vercel.app/",
+    github: "https://github.com/Leevy-Otieno/Stacke_Battleke_frontend",
   },
   {
     title: "Social Media Managment Platform",
