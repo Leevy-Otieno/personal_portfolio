@@ -4,7 +4,7 @@ const projects = [
   {
     title: "MOVE DIFFERENT eMOBILITY",
     description:
-      "Your one-stop shop for bikes, premium parts, and accessories. Built to keep you riding smooth, whether you need a new setup or reliable replacements.",
+      "A scalable full-stack web application designed for a vehicle retail shop selling e-bikes and replacement parts. Developed using React and TypeScript, it features highly optimized data-fetching models and custom API integrations to deliver persistent shopping cart states, smooth UI transitions, and rapid transaction processing.",
     image: "/projects/emobility.png",
     tags: ["React", "Typescript", "NodeJS"],
     link: "https://emobility.movedifferent.co.ke/",
@@ -12,7 +12,7 @@ const projects = [
   {
     title: "Fundi Interior Solutions",
     description:
-      "Fundi interior solutions is a professional interior design and construction firm located at Kivuli Centre on Kabiria Road in Nairobi, Kenya. The company specializes in technical precision and creative vision for both residential homes and commercial fit-outs across East Africa.",
+      "A sleek business application engineered for a premier studio selling spatial design and custom renovations. Built on an architecture of highly reusable components, the site delivers a pixel-perfect, fully responsive interactive portfolio with optimized asset delivery to guarantee rapid load times for media-heavy architectural layouts.",
     image: "/projects/fundi.png",
     tags: ["React.js"],
     link: "https://fundi-interiors-final.lovable.app/",
@@ -21,7 +21,7 @@ const projects = [
   {
     title: "StackBattleKe",
     description:
-      "An open-source, interactive competitive programming platform where developers can tackle coding challenges, climb the leaderboards, form groups, and track their progress via a personalized dashboard. Think LeetCode, but built for community and competition.",
+      "A full-stack competitive coding platform built for developer communities to practice LeetCode-style challenges and track progress on dynamic dashboards. Developed using a modular React architecture, it implements efficient state management models, highly secure API endpoints, and optimized data layers to ensure instant, reactive performance during live coding sessions.",
     image: "/projects/StackBattle.png",
     tags: ["React", "Typescript", "NodeJS"],
     link: "https://stacke-battleke-frontend.vercel.app/",
@@ -30,7 +30,7 @@ const projects = [
   {
     title: "BiteHUB",
     description:
-      "Fresh flavors, local favorites, and your go-to dishes delivered fast or ready for easy pickup. Order online and satisfy your cravings in just a few clicks.",
+      "A scalable food delivery application providing online menus, instant ordering, and localized food logistics. The platform runs on a robust PostgreSQL database optimized for geometric or relational lookups, using a clean utility-first CSS layout and server-side logic to process rapid menu updates and user carts without performance lag.",
     image: "/projects/Restaurant.png",
     tags: ["React JS", "PostgreSQL", "Tailwind"],
     link: "https://restaurant-site-hah4.vercel.app/",
@@ -39,7 +39,7 @@ const projects = [
   {
     title: "Post Nexus",
     description:
-      "An intelligent Social Media management tools which  helps users create better content faster.[In progress]",
+      "An intelligent social media workflow application providing automated marketing tools, AI copy generation, and data-driven scheduling for growth-focused SMEs. Powered by FastAPI and React, the application leverages optimized asynchronous request handling and large language model execution to process rapid content creation requests with minimal latency[IN PROGRESS].",
     image: "/projects/Postnexus1.png",
     tags: ["React", "OpenAI", "Python", "FastAPI"],
     link: "https://postnexus.vercel.app/",
@@ -48,7 +48,7 @@ const projects = [
   {
     title: "Booking",
     description:
-      "An online platform that allows users to booke there flights online.",
+      "A scalable full-stack travel marketplace selling instant flight bookings, custom holiday tours, and itinerary organization. Built on a robust MongoDB data layer, it features highly reactive search parameters, optimized geospatial or date-based query parameters, and a modular frontend architecture to ensure fluid, lag-free user search experiences.[IN PROGRESS]",
     image: "/projects/booking.png",
     tags: ["React.js", "MongoDB"],
     link: "https://traveling-site-jet.vercel.app/#",
@@ -57,7 +57,7 @@ const projects = [
   {
     title: "Rabii FOundation",
     description:
-      "An online platform that allows users to booke there flights online.",
+      "A full-stack community and fundraising platform engineered for a non-profit foundation providing environmental sustainability initiatives, health awareness campaigns, and public donations. Built with a modular frontend architecture, it integrates a secure third-party payment gateway for seamless donations, optimized dynamic content loading for program management, and scalable data layouts to manage community member engagement effortlessly.",
     image: "/projects/rabii.png",
     tags: ["React.js"],
     link: "https://rabii-foundation.vercel.app/#",
@@ -78,10 +78,10 @@ export const Projects = () => {
             Featured Work
           </span>
           <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 animate-fade-in animation-delay-100 text-secondary-foreground">
-            Projects that
+            High-performance code that
             <span className="font-serif italic font-normal text-white">
               {" "}
-              make an impact.
+              drives business goals.
             </span>
           </h2>
           <p className="text-muted-foreground animate-fade-in animation-delay-200">

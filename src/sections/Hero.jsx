@@ -86,7 +86,7 @@ export const Hero = () => {
                   Code With Purpose
                 </span>
                 <br />
-                deploy with
+                Deploy with
                 <br />
                 <span className="font-serif italic font-normal text-white">
                   pride.
@@ -94,7 +94,7 @@ export const Hero = () => {
               </h1>
               <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-200">
                 Hi, I'm Leevy Otieno — a software engineer specializing in
-                Python , Django React, Next.js, and TypeScript. I build
+                Python , Django,Flask, React, Next.js, TypeScript and Wordpress . I build
                 scalable, performant web applications that users love.
               </p>
             </div>
@@ -110,7 +110,7 @@ export const Hero = () => {
                   download
                   className="inline-flex items-center gap-2"
                 >
-                  <span>Download CV </span>
+                  <span>Read My Resume </span>
                 </a>
               </AnimatedBorderButton>
             </div>

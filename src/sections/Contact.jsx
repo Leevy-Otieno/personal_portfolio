@@ -55,7 +55,7 @@ export const Contact = () => {
 
       if (!serviceId || !templateId || !publicKey) {
         throw new Error(
-          "EmailJS configuration is missing. Please check your environment variables."
+          "EmailJS configuration is missing. Please check your environment variables.",
         );
       }
 
@@ -67,20 +67,23 @@ export const Contact = () => {
           email: formData.email,
           message: formData.message,
         },
-        publicKey
+        publicKey,
       );
 
       setSubmitStatus({
         type: "success",
-        message: "Message sent successfully! I'll get back to you soon.",
+        message: "Message sent successfully! I'll get back to you Right away.",
       });
       setFormData({ name: "", email: "", message: "" });
-    } catch (err) {
+    } catch (error) {
+      // 👈 Changed from 'err' to 'error'
       console.error("EmailJS error:", error);
       setSubmitStatus({
         type: "error",
         message:
-          error.text || "Failed to send message. Please try again later.",
+          error?.text ||
+          error?.message ||
+          "Failed to send message. Please try again later.",
       });
     } finally {
       setIsLoading(false);
@@ -125,7 +128,7 @@ export const Contact = () => {
                   id="name"
                   type="text"
                   required
-                  placeholder="Your name..."
+                  placeholder="Your name or Organisation..."
                   value={formData.name}
                   onChange={(e) =>
                     setFormData({ ...formData, name: e.target.value })
