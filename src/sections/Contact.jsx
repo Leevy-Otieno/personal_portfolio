@@ -14,14 +14,14 @@ const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "leevyotieno@gmail.com",
-    href: "mailto:leevyotieno@gmail.com",
+    value: "otienoleevy@gmail.com",
+    href: "mailto:otienoleevy@gmail.com",
   },
   {
     icon: Phone,
     label: "Phone",
     value: "+254 791086979",
-    href: "tel:+15551234567",
+    href: "tel:+254791086979",
   },
   {
     icon: MapPin,
