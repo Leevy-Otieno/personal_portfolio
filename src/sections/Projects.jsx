@@ -10,6 +10,15 @@ const projects = [
     link: "https://emobility.movedifferent.co.ke/",
   },
   {
+    title: "Fundi Interior Solutions",
+    description:
+      "Fundi interior solutions is a professional interior design and construction firm located at Kivuli Centre on Kabiria Road in Nairobi, Kenya. The company specializes in technical precision and creative vision for both residential homes and commercial fit-outs across East Africa.",
+    image: "/projects/fundi.png",
+    tags: ["React.js"],
+    link: "https://fundi-interiors-final.lovable.app/",
+    github: "#",
+  },
+  {
     title: "StackBattleKe",
     description:
       "An open-source, interactive competitive programming platform where developers can tackle coding challenges, climb the leaderboards, form groups, and track their progress via a personalized dashboard. Think LeetCode, but built for community and competition.",
