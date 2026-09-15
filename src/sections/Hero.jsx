@@ -94,8 +94,8 @@ export const Hero = () => {
               </h1>
               <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-200">
                 Hi, I'm Leevy Otieno — a software engineer specializing in
-                Python , Django,Flask, React, Next.js, TypeScript and Wordpress . I build
-                scalable, performant web applications that users love.
+                Python , Django,Flask, React, Next.js, TypeScript and Wordpress
+                . I build scalable, performant web applications that users love.
               </p>
             </div>
 
@@ -106,7 +106,7 @@ export const Hero = () => {
               </Button>
               <AnimatedBorderButton>
                 <a
-                  href="/Leevy_Otieno cv.docx"
+                  href="/mycv.docx"
                   download
                   className="inline-flex items-center gap-2"
                 >
@@ -131,14 +131,14 @@ export const Hero = () => {
                 },
               ].map((social, idx) => (
                 <a
-  key={idx}
-  href={social.href}
-  target="_blank" 
-  rel="noopener noreferrer"
-  className="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all duration-300"
->
-  {<social.icon className="w-5 h-5" />}
-</a>
+                  key={idx}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all duration-300"
+                >
+                  {<social.icon className="w-5 h-5" />}
+                </a>
               ))}
             </div>
           </div>
