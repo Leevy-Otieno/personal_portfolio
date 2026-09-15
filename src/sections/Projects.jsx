@@ -2,39 +2,56 @@ import { ArrowUpRight, Github } from "lucide-react";
 import { AnimatedBorderButton } from "@/components/AnimatedBorderButton";
 const projects = [
   {
-    title: "ChallengeX",
+    title: "MOVE DIFFERENT eMOBILITY",
+    description:
+      "Your one-stop shop for bikes, premium parts, and accessories. Built to keep you riding smooth, whether you need a new setup or reliable replacements.",
+    image: "/projects/emobility.png",
+    tags: ["React", "Typescript", "NodeJS"],
+    link: "https://emobility.movedifferent.co.ke/",
+  },
+  {
+    title: "StackBattleKe",
     description:
       "An open-source, interactive competitive programming platform where developers can tackle coding challenges, climb the leaderboards, form groups, and track their progress via a personalized dashboard. Think LeetCode, but built for community and competition.",
-    image: "/projects/project1.png",
+    image: "/projects/StackBattle.png",
     tags: ["React", "Typescript", "NodeJS"],
     link: "https://stacke-battleke-frontend.vercel.app/",
     github: "https://github.com/Leevy-Otieno/Stacke_Battleke_frontend",
   },
   {
-    title: "Social Media Managment Platform",
+    title: "BiteHUB",
     description:
-      "A full-featured social media management solution which uses AI to help you manage and boost your ideas. Also it allows you to manage all your social networks and profiles with one tool.",
-    image: "/projects/project2.png",
-    tags: ["Next.js", "Stripe", "PostgreSQL", "Tailwind"],
-    link: "#",
-    github: "#",
+      "Fresh flavors, local favorites, and your go-to dishes delivered fast or ready for easy pickup. Order online and satisfy your cravings in just a few clicks.",
+    image: "/projects/Restaurant.png",
+    tags: ["React JS", "PostgreSQL", "Tailwind"],
+    link: "https://restaurant-site-hah4.vercel.app/",
+    github: "https://github.com/Leevy-Otieno/restaurant-site",
   },
   {
     title: "Post Nexus",
     description:
-      "An intelligent Social Media management tools which  helps users create better content faster.",
-    image: "/projects/postnexus.png",
+      "An intelligent Social Media management tools which  helps users create better content faster.[In progress]",
+    image: "/projects/Postnexus1.png",
     tags: ["React", "OpenAI", "Python", "FastAPI"],
-    link: "#",
+    link: "https://postnexus.vercel.app/",
+    github: "",
+  },
+  {
+    title: "Booking",
+    description:
+      "An online platform that allows users to booke there flights online.",
+    image: "/projects/booking.png",
+    tags: ["React.js", "MongoDB"],
+    link: "https://traveling-site-jet.vercel.app/#",
     github: "#",
   },
   {
-    title: "RentAll's",
+    title: "Rabii FOundation",
     description:
-      "A Real estaet platofrom which allows users to find their homesteatds any where regardless of their position, or price. It helps users found affordable housing.",
-    image: "/projects/project4.png",
-    tags: ["React.js", "MongoDB"],
-    link: "#",
+      "An online platform that allows users to booke there flights online.",
+    image: "/projects/rabii.png",
+    tags: ["React.js"],
+    link: "https://rabii-foundation.vercel.app/#",
     github: "#",
   },
 ];
