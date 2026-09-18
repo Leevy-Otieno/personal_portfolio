@@ -96,10 +96,10 @@ export const Hero = () => {
                 </span>
               </h1>
 
-              {/* Bio Paragraph: "Leevy Otieno" clean bouncing before hover, glowing on hover */}
+              {/* Bio Paragraph: "Leevy Otieno" with Offset Bounce Cadence & Hover Glow */}
               <p className="text-lg text-slate-300 max-w-lg animate-fade-in animation-delay-200 leading-relaxed">
                 Hi, I'm{" "}
-                <span className="inline-block cursor-pointer font-bold text-slate-100 animate-bounce hover:animate-none transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:-translate-y-2 hover:scale-105 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-blue-400 hover:via-cyan-300 hover:to-indigo-400 hover:drop-shadow-[0_0_25px_rgba(56,189,248,0.85)]">
+                <span className="inline-block cursor-pointer font-bold text-slate-100 animate-bounce [animation-duration:1.8s] [animation-delay:400ms] hover:animate-none transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:-translate-y-2 hover:scale-105 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-blue-400 hover:via-cyan-300 hover:to-indigo-400 hover:drop-shadow-[0_0_25px_rgba(56,189,248,0.85)]">
                   Leevy Otieno
                 </span>{" "}
                 — a software engineer specializing in Python, Django, Flask,
