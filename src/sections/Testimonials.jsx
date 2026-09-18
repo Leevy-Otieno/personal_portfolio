@@ -18,7 +18,7 @@ const testimonials = [
     role: "Seniour Social Worker",
     company: "NRCF",
     avatar: "/avatars/NRCFlogo.png",
-    rating: 5,
+    rating: 4,
   },
   {
     quote:
@@ -27,6 +27,7 @@ const testimonials = [
     role: "CEO",
     company: "Joyce Perfumier",
     avatar: "/avatars/JoycePerfumier.jpg",
+    rating: 3,
   },
 ];
 
