@@ -112,7 +112,7 @@ export const Hero = () => {
                         >
                           {word}
                         </span>
-                      )
+                      ),
                     )}
                   </div>
 
