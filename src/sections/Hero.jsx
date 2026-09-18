@@ -6,6 +6,8 @@ import {
   Linkedin,
   Twitter,
   Instagram,
+  FileText,
+  Download,
 } from "lucide-react";
 import { AnimatedBorderButton } from "../components/AnimatedBorderButton";
 
@@ -73,12 +75,51 @@ export const Hero = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Text Content */}
           <div className="space-y-8">
-            <div className="animate-fade-in">
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900/80 border border-blue-500/30 text-sm text-blue-400 backdrop-blur-md shadow-md shadow-blue-950/30">
-                <span className="w-2 h-2 bg-blue-400 rounded-full animate-pulse shadow-sm shadow-blue-400" />
-                Software Engineer • React Specialist • Python Specialist •
-                Machine Learning Enthusiast
-              </span>
+            {/* Role Badge with Idle Animated Border Background & Enhanced Hover State */}
+            <div className="animate-fade-in inline-block">
+              <div className="relative group/badge p-[2px] rounded-full overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:scale-[1.02] shadow-lg shadow-blue-950/50">
+                {/* Continuous Animated Rotating Border Gradient (Idle & Hover) */}
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-cyan-400 via-indigo-600 to-blue-600 bg-[length:200%_auto] rounded-full opacity-80 group-hover/badge:opacity-100 group-hover/badge:animate-marquee transition-all duration-500 animate-pulse" />
+
+                {/* Inner Badge Content */}
+                <div className="relative px-5 py-2.5 rounded-full bg-slate-950/95 backdrop-blur-md flex items-center gap-3">
+                  {/* Left Glowing Dot */}
+                  <span className="w-2 h-2 bg-cyan-400 rounded-full animate-ping shrink-0" />
+
+                  <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm font-medium text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-blue-300 to-indigo-200">
+                    {[
+                      "Software",
+                      "Engineer",
+                      "•",
+                      "React",
+                      "Specialist",
+                      "•",
+                      "Python",
+                      "Specialist",
+                      "•",
+                      "Machine",
+                      "Learning",
+                      "Enthusiast",
+                    ].map((word, idx) =>
+                      word === "•" ? (
+                        <span key={idx} className="text-blue-500 select-none">
+                          •
+                        </span>
+                      ) : (
+                        <span
+                          key={idx}
+                          className="inline-block cursor-pointer transition-transform duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:scale-125 hover:-translate-y-1 hover:animate-bounce hover:text-cyan-300 hover:drop-shadow-[0_0_12px_rgba(56,189,248,0.9)]"
+                        >
+                          {word}
+                        </span>
+                      )
+                    )}
+                  </div>
+
+                  {/* Right Glowing Dot */}
+                  <span className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse shadow-sm shadow-cyan-400 shrink-0" />
+                </div>
+              </div>
             </div>
 
             {/* Headline */}
@@ -96,7 +137,7 @@ export const Hero = () => {
                 </span>
               </h1>
 
-              {/* Bio Paragraph: "Leevy Otieno" with Offset Bounce Cadence & Hover Glow */}
+              {/* Bio Paragraph: "Leevy Otieno" with Offset Bounce Cadence */}
               <p className="text-lg text-slate-300 max-w-lg animate-fade-in animation-delay-200 leading-relaxed">
                 Hi, I'm{" "}
                 <span className="inline-block cursor-pointer font-bold text-slate-100 animate-bounce [animation-duration:1.8s] [animation-delay:400ms] hover:animate-none transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:-translate-y-2 hover:scale-105 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-blue-400 hover:via-cyan-300 hover:to-indigo-400 hover:drop-shadow-[0_0_25px_rgba(56,189,248,0.85)]">
@@ -125,14 +166,26 @@ export const Hero = () => {
                 </a>
               </div>
 
-              {/* Animated Border Button for Resume */}
+              {/* Animated Border Button for Resume with Idle Zoom & Icon Swap on Hover */}
               <AnimatedBorderButton>
                 <a
                   href="/mycv.docx"
-                  download
-                  className="inline-flex items-center gap-2 text-slate-200 hover:text-blue-300 transition-colors"
+                  download="Leevy_Otieno_Resume_ReadOnly.docx"
+                  className="relative group/resume inline-flex items-center gap-2.5 px-6 py-3 rounded-xl bg-slate-950/90 border border-blue-500/30 text-cyan-300 font-medium transition-all duration-500 animate-pulse hover:animate-none hover:scale-105 hover:border-cyan-400/80 hover:text-white shadow-lg shadow-blue-950/40 hover:shadow-cyan-500/30 active:scale-95 overflow-hidden"
                 >
-                  <span>Read My Resume</span>
+                  {/* Outer Glowing Blue Aura on Hover */}
+                  <span className="absolute -inset-1 rounded-xl bg-gradient-to-r from-blue-600 via-cyan-400 to-indigo-600 opacity-0 group-hover/resume:opacity-100 group-hover/resume:blur-md transition-all duration-500 pointer-events-none" />
+
+                  {/* Icon Container: FileText on idle, swaps to Download on hover */}
+                  <div className="relative z-10 flex items-center justify-center w-5 h-5">
+                    <FileText className="absolute w-4 h-4 text-cyan-400 transition-all duration-300 group-hover/resume:opacity-0 group-hover/resume:scale-75 group-hover/resume:-translate-y-2" />
+                    <Download className="absolute w-4 h-4 text-white opacity-0 transition-all duration-300 group-hover/resume:opacity-100 group-hover/resume:scale-110 group-hover/resume:translate-y-0" />
+                  </div>
+
+                  {/* Button Text with Glowing Gradient */}
+                  <span className="relative z-10 font-medium text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-blue-300 to-indigo-200 group-hover/resume:from-white group-hover/resume:via-cyan-200 group-hover/resume:to-blue-300 drop-shadow-[0_0_10px_rgba(56,189,248,0.5)] group-hover/resume:drop-shadow-[0_0_20px_rgba(56,189,248,0.9)] transition-all duration-300">
+                    Read My Resume
+                  </span>
                 </a>
               </AnimatedBorderButton>
             </div>
