@@ -46,37 +46,24 @@ const experiences = [
 
 export const Experience = () => {
   return (
-    <section id="experience" className="py-32 relative overflow-hidden">
-      <div
-        className="absolute top-1/2 left-1/4 w-96
-       h-96 bg-primary/5 rounded-full blur-3xl -translate-y-1/2"
-      />
+    <section id="experience" className="py-32 relative overflow-hidden bg-slate-950 text-slate-100">
+      {/* Background Glow Overlay */}
+      <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl -translate-y-1/2 pointer-events-none" />
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
         <div className="max-w-3xl mb-16">
-          <span
-            className="text-secondary-foreground text-sm
-           font-medium tracking-wider uppercase animate-fade-in"
-          >
+          <span className="text-blue-400 text-sm font-medium tracking-wider uppercase animate-fade-in">
             Career Journey
           </span>
-          <h2
-            className="text-4xl md:text-5xl font-bold
-           mt-4 mb-6 animate-fade-in animation-delay-100
-            text-secondary-foreground"
-          >
+          <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 animate-fade-in animation-delay-100 text-slate-100">
             Experience that{" "}
-            <span className="font-serif italic font-normal text-white">
-              {" "}
+            <span className="font-serif italic font-normal text-blue-300">
               speaks volumes.
             </span>
           </h2>
 
-          <p
-            className="text-muted-foreground
-           animate-fade-in animation-delay-200"
-          >
+          <p className="text-slate-300 animate-fade-in animation-delay-200">
             A timeline of my professional growth, from curious beginner to
             senior engineer leading teams and products at scale.
           </p>
@@ -84,7 +71,8 @@ export const Experience = () => {
 
         {/* Timeline */}
         <div className="relative">
-          <div className="timeline-glow absolute left-0 md:left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-primary/70 via-primary/30 to-transparent md:-translate-x-1/2 shadow-[0_0_25px_rgba(32,178,166,0.8)]" />
+          {/* Midnight Blue Timeline Line */}
+          <div className="timeline-glow absolute left-0 md:left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-blue-500 via-indigo-500/40 to-transparent md:-translate-x-1/2 shadow-[0_0_15px_rgba(59,130,246,0.5)]" />
 
           {/* Experience Items */}
           <div className="space-y-12">
@@ -95,13 +83,13 @@ export const Experience = () => {
                 style={{ animationDelay: `${(idx + 1) * 150}ms` }}
               >
                 {/* Timeline Dot */}
-                <div className="absolute left-0 md:left-1/2 top-0 w-3 h-3 bg-primary rounded-full -translate-x-1/2 ring-4 ring-background z-10">
+                <div className="absolute left-0 md:left-1/2 top-0 w-3.5 h-3.5 bg-blue-500 rounded-full -translate-x-1/2 ring-4 ring-slate-950 z-10 shadow-md shadow-blue-500/50">
                   {exp.current && (
-                    <span className="absolute inset-0 rounded-full bg-primary animate-ping opacity-75" />
+                    <span className="absolute -inset-1 rounded-full bg-blue-400 animate-ping opacity-75" />
                   )}
                 </div>
 
-                {/* Content */}
+                {/* Content Card */}
                 <div
                   className={`pl-8 md:pl-0 ${
                     idx % 2 === 0
@@ -109,26 +97,26 @@ export const Experience = () => {
                       : "md:col-start-2 md:pl-16"
                   }`}
                 >
-                  <div
-                    className={`glass p-6 rounded-2xl border border-primary/30 hover:border-primary/50 transition-all duration-500`}
-                  >
-                    <span className="text-sm text-primary font-medium">
+                  <div className="bg-slate-900/80 backdrop-blur-md p-6 rounded-2xl border border-blue-500/20 hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-950/40 transition-all duration-500 group">
+                    <span className="text-sm text-blue-400 font-semibold tracking-wide">
                       {exp.period}
                     </span>
-                    <h3 className="text-xl font-semibold mt-2">{exp.role}</h3>
-                    <p className="text-muted-foreground">{exp.company}</p>
-                    <p className="text-sm text-muted-foreground mt-4">
+                    <h3 className="text-xl font-semibold mt-1 text-slate-100 group-hover:text-blue-300 transition-colors">
+                      {exp.role}
+                    </h3>
+                    <p className="text-slate-400 text-sm font-medium">{exp.company}</p>
+                    <p className="text-sm text-slate-300 mt-4 leading-relaxed">
                       {exp.description}
                     </p>
                     <div
-                      className={`flex flex-wrap gap-2 mt-4 ${
+                      className={`flex flex-wrap gap-2 mt-5 ${
                         idx % 2 === 0 ? "md:justify-end" : ""
                       }`}
                     >
                       {exp.technologies.map((tech, techIdx) => (
                         <span
                           key={techIdx}
-                          className="px-3 py-1 bg-surface text-xs rounded-full text-muted-foreground"
+                          className="px-3 py-1 bg-slate-950/80 border border-slate-800 text-xs rounded-full text-slate-300 font-medium group-hover:border-blue-500/30 transition-colors"
                         >
                           {tech}
                         </span>

@@ -1,5 +1,6 @@
 import { ArrowUpRight, Github } from "lucide-react";
 import { AnimatedBorderButton } from "@/components/AnimatedBorderButton";
+
 const projects = [
   {
     title: "MOVE DIFFERENT eMOBILITY",
@@ -8,6 +9,7 @@ const projects = [
     image: "/projects/emobility.png",
     tags: ["React", "Typescript", "NodeJS"],
     link: "https://emobility.movedifferent.co.ke/",
+    github: "",
   },
   {
     title: "Fundi Interior Solutions",
@@ -16,7 +18,7 @@ const projects = [
     image: "/projects/fundi.png",
     tags: ["React.js"],
     link: "https://fundi-interiors-final.lovable.app/",
-    github: "#",
+    github: "",
   },
   {
     title: "StackBattleKe",
@@ -39,7 +41,7 @@ const projects = [
   {
     title: "Post Nexus",
     description:
-      "An intelligent social media workflow application providing automated marketing tools, AI copy generation, and data-driven scheduling for growth-focused SMEs. Powered by FastAPI and React, the application leverages optimized asynchronous request handling and large language model execution to process rapid content creation requests with minimal latency[IN PROGRESS].",
+      "An intelligent social media workflow application providing automated marketing tools, AI copy generation, and data-driven scheduling for growth-focused SMEs. Powered by FastAPI and React, the application leverages optimized asynchronous request handling and large language model execution to process rapid content creation requests with minimal latency [IN PROGRESS].",
     image: "/projects/Postnexus1.png",
     tags: ["React", "OpenAI", "Python", "FastAPI"],
     link: "https://postnexus.vercel.app/",
@@ -48,43 +50,44 @@ const projects = [
   {
     title: "Booking",
     description:
-      "A scalable full-stack travel marketplace selling instant flight bookings, custom holiday tours, and itinerary organization. Built on a robust MongoDB data layer, it features highly reactive search parameters, optimized geospatial or date-based query parameters, and a modular frontend architecture to ensure fluid, lag-free user search experiences.[IN PROGRESS]",
+      "A scalable full-stack travel marketplace selling instant flight bookings, custom holiday tours, and itinerary organization. Built on a robust MongoDB data layer, it features highly reactive search parameters, optimized geospatial or date-based query parameters, and a modular frontend architecture to ensure fluid, lag-free user search experiences [IN PROGRESS].",
     image: "/projects/booking.png",
     tags: ["React.js", "MongoDB"],
     link: "https://traveling-site-jet.vercel.app/#",
-    github: "#",
+    github: "",
   },
   {
-    title: "Rabii FOundation",
+    title: "Rabii Foundation",
     description:
       "A full-stack community and fundraising platform engineered for a non-profit foundation providing environmental sustainability initiatives, health awareness campaigns, and public donations. Built with a modular frontend architecture, it integrates a secure third-party payment gateway for seamless donations, optimized dynamic content loading for program management, and scalable data layouts to manage community member engagement effortlessly.",
     image: "/projects/rabii.png",
     tags: ["React.js"],
     link: "https://rabii-foundation.vercel.app/#",
-    github: "#",
+    github: "",
   },
 ];
 
 export const Projects = () => {
   return (
-    <section id="projects" className="py-32 relative overflow-hidden">
-      {/* Bg glows */}
-      <div className="absolute top-1/4 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 left-0 w-64 h-64 bg-highlight/5 rounded-full blur-3xl" />
+    <section id="projects" className="py-32 relative overflow-hidden bg-slate-950 text-slate-100">
+      {/* Background Glowing Ambient Spheres */}
+      <div className="absolute top-1/4 right-0 w-96 h-96 bg-blue-600/15 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-1/4 left-0 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
+
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
         <div className="text-center mx-auto max-w-3xl mb-16">
-          <span className="text-secondary-foreground text-sm font-medium tracking-wider uppercase animate-fade-in">
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900/80 border border-blue-500/30 text-xs font-medium tracking-wider uppercase text-blue-400 backdrop-blur-md shadow-md shadow-blue-950/30 animate-fade-in">
+            <span className="w-1.5 h-1.5 bg-blue-400 rounded-full animate-pulse shadow-sm shadow-blue-400" />
             Featured Work
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 animate-fade-in animation-delay-100 text-secondary-foreground">
-            High-performance code that
-            <span className="font-serif italic font-normal text-white">
-              {" "}
+          <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 animate-fade-in animation-delay-100 text-slate-100">
+            High-performance code that{" "}
+            <span className="font-serif italic font-normal text-blue-400 drop-shadow-[0_0_20px_rgba(96,165,250,0.35)]">
               drives business goals.
             </span>
           </h2>
-          <p className="text-muted-foreground animate-fade-in animation-delay-200">
+          <p className="text-slate-300 animate-fade-in animation-delay-200 leading-relaxed">
             A selection of my recent work, from complex web applications to
             innovative tools that solve real-world problems.
           </p>
@@ -92,77 +95,115 @@ export const Projects = () => {
 
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 gap-8">
-          {projects.map((project, idx) => (
-            <div
-              key={idx}
-              className="group glass rounded-2xl overflow-hidden animate-fade-in md:row-span-1"
-              style={{ animationDelay: `${(idx + 1) * 100}ms` }}
-            >
-              {/* Image */}
-              <div className="relative overflow-hidden aspect-video">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div
-                  className="absolute inset-0 
-                bg-gradient-to-t from-card via-card/50
-                 to-transparent opacity-60"
-                />
-                {/* Overlay Links */}
-                <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <a
-                    href={project.link}
-                    className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all"
-                  >
-                    <ArrowUpRight className="w-5 h-5" />
-                  </a>
-                  <a
-                    href={project.github}
-                    className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all"
-                  >
-                    <Github className="w-5 h-5" />
-                  </a>
-                </div>
-              </div>
+          {projects.map((project, idx) => {
+            const hasValidGithub =
+              project.github && project.github.trim() !== "" && project.github !== "#";
 
-              {/* Content */}
-              <div className="p-6 space-y-4">
-                <div className="flex items-start justify-between">
-                  <h3 className="text-xl font-semibold group-hover:text-primary transition-colors">
-                    {project.title}
-                  </h3>
-                  <ArrowUpRight
-                    className="w-5 h-5 
-                  text-muted-foreground group-hover:text-primary
-                   group-hover:translate-x-1 
-                   group-hover:-translate-y-1 transition-all"
-                  />
-                </div>
-                <p className="text-muted-foreground text-sm">
-                  {project.description}
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag, tagIdx) => (
-                    <span
-                      key={tagIdx}
-                      className="px-4 py-1.5 rounded-full bg-surface text-xs font-medium border border-border/50 text-muted-foreground hover:border-primary/50 hover:text-primary transition-all duration-300"
-                    >
-                      {tag}
-                    </span>
-                  ))}
+            return (
+              <div
+                key={idx}
+                className="group relative rounded-2xl animate-fade-in"
+                style={{ animationDelay: `${(idx + 1) * 100}ms` }}
+              >
+                {/* Glowing Outer Gradient Halo on Hover */}
+                <div className="absolute -inset-0.5 rounded-2xl bg-gradient-to-r from-blue-600 via-cyan-400 to-indigo-600 opacity-0 group-hover:opacity-100 transition-all duration-500 blur-md pointer-events-none" />
+
+                {/* Card Container with Spring Lift Transition */}
+                <div className="relative z-10 flex flex-col h-full bg-slate-900/90 backdrop-blur-md rounded-2xl border border-slate-800/80 group-hover:border-blue-400/80 overflow-hidden shadow-xl shadow-slate-950/50 transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:-translate-y-3 group-hover:scale-[1.01] group-hover:shadow-2xl group-hover:shadow-blue-500/20">
+                  {/* Image Container */}
+                  <div className="relative overflow-hidden aspect-video bg-slate-950">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent opacity-70 group-hover:opacity-40 transition-opacity duration-300" />
+
+                    {/* Overlay Action Buttons */}
+                    <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-all duration-300 bg-slate-950/50 backdrop-blur-[2px]">
+                      {project.link && (
+                        <a
+                          href={project.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`Visit live preview for ${project.title}`}
+                          className="p-3.5 rounded-full bg-slate-900/90 border border-blue-500/40 text-blue-400 hover:text-slate-950 hover:bg-cyan-400 hover:border-cyan-400 shadow-lg shadow-blue-950/50 transition-all duration-300 hover:scale-110"
+                        >
+                          <ArrowUpRight className="w-5 h-5" />
+                        </a>
+                      )}
+                      {hasValidGithub && (
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`View GitHub repository for ${project.title}`}
+                          className="p-3.5 rounded-full bg-slate-900/90 border border-slate-700 text-slate-300 hover:text-slate-950 hover:bg-slate-100 hover:border-slate-100 shadow-lg shadow-slate-950/50 transition-all duration-300 hover:scale-110"
+                        >
+                          <Github className="w-5 h-5" />
+                        </a>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Content Container */}
+                  <div className="p-6 space-y-4 flex flex-col justify-between flex-grow">
+                    <div className="space-y-3">
+                      <div className="flex items-start justify-between gap-4">
+                        <a
+                          href={project.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="group/title flex items-center gap-2"
+                        >
+                          <h3 className="text-xl font-bold text-slate-100 group-hover/title:text-blue-400 transition-colors">
+                            {project.title}
+                          </h3>
+                        </a>
+                        <a
+                          href={project.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="p-1 rounded-md text-slate-400 group-hover:text-cyan-400 transition-colors"
+                        >
+                          <ArrowUpRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+                        </a>
+                      </div>
+                      <p className="text-slate-300 text-sm leading-relaxed">
+                        {project.description}
+                      </p>
+                    </div>
+
+                    {/* Tags */}
+                    <div className="flex flex-wrap gap-2 pt-2">
+                      {project.tags.map((tag, tagIdx) => (
+                        <span
+                          key={tagIdx}
+                          className="px-3.5 py-1 rounded-full bg-slate-950/80 text-xs font-medium border border-slate-800 text-slate-300 group-hover:border-blue-500/40 group-hover:text-blue-300 transition-all duration-300"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* View All CTA */}
-        <div className="text-center mt-12 animate-fade-in animation-delay-500">
+        <div className="text-center mt-16 animate-fade-in animation-delay-500">
           <AnimatedBorderButton>
-            View All Projects
-            <ArrowUpRight className="w-5 h-5" />
+            <a
+              href="https://github.com/Leevy-Otieno"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-slate-200 hover:text-blue-300 transition-colors font-medium"
+            >
+              <span>View All Projects</span>
+              <ArrowUpRight className="w-5 h-5 text-cyan-400" />
+            </a>
           </AnimatedBorderButton>
         </div>
       </div>

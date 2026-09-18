@@ -5,7 +5,6 @@ import {
   Github,
   Linkedin,
   Twitter,
-  Download,
   Instagram,
 } from "lucide-react";
 import { AnimatedBorderButton } from "../components/AnimatedBorderButton";
@@ -28,33 +27,36 @@ const skills = [
   "Vercel",
   "Tailwind CSS",
   "Prisma",
-
   "Figma",
   "Git",
   "GitHub Actions",
-  "Python",
 ];
 
 export const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Bg */}
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-slate-950 text-slate-100">
+      {/* Background Overlay */}
       <div className="absolute inset-0">
         <img
           src="/hero-bg.jpg"
           alt="Hero image"
-          className="w-full h-full object-cover opacity-40"
+          className="w-full h-full object-cover opacity-50"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/80 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/30 via-slate-950/70 to-slate-950" />
       </div>
 
-      {/* Green Dots */}
+      {/* Blue Glowing Ambient Spheres */}
+      <div className="absolute top-1/4 left-1/3 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-cyan-500/15 rounded-full blur-3xl pointer-events-none" />
+
+      {/* Floating Blue Particles */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(30)].map((_, i) => (
           <div
-            className="absolute w-1.5 h-1.5 rounded-full opacity-60"
+            key={i}
+            className="absolute w-1.5 h-1.5 rounded-full opacity-60 shadow-sm shadow-cyan-400"
             style={{
-              backgroundColor: "#20B2A6",
+              backgroundColor: "#38bdf8",
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
               animation: `slow-drift ${
@@ -72,8 +74,8 @@ export const Hero = () => {
           {/* Left Column - Text Content */}
           <div className="space-y-8">
             <div className="animate-fade-in">
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-primary">
-                <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900/80 border border-blue-500/30 text-sm text-blue-400 backdrop-blur-md shadow-md shadow-blue-950/30">
+                <span className="w-2 h-2 bg-blue-400 rounded-full animate-pulse shadow-sm shadow-blue-400" />
                 Software Engineer • React Specialist • Python Specialist •
                 Machine Learning Enthusiast
               </span>
@@ -82,42 +84,62 @@ export const Hero = () => {
             {/* Headline */}
             <div className="space-y-4">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in animation-delay-100">
-                <span className="text-primary glow-text">
+                {/* Code With Purpose - Animated Hover Glow */}
+                <span className="inline-block text-blue-400 transition-all duration-500 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-blue-400 hover:via-cyan-300 hover:to-indigo-400 drop-shadow-[0_0_25px_rgba(96,165,250,0.4)] hover:drop-shadow-[0_0_35px_rgba(56,189,248,0.8)] hover:-translate-y-1 hover:scale-[1.02] cursor-default">
                   Code With Purpose
                 </span>
                 <br />
                 Deploy with
                 <br />
-                <span className="font-serif italic font-normal text-white">
+                <span className="font-serif italic font-normal text-slate-200">
                   pride.
                 </span>
               </h1>
-              <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-200">
-                Hi, I'm Leevy Otieno — a software engineer specializing in
-                Python , Django,Flask, React, Next.js, TypeScript and Wordpress
-                . I build scalable, performant web applications that users love.
+
+              {/* Bio Paragraph: "Leevy Otieno" clean bouncing before hover, glowing on hover */}
+              <p className="text-lg text-slate-300 max-w-lg animate-fade-in animation-delay-200 leading-relaxed">
+                Hi, I'm{" "}
+                <span className="inline-block cursor-pointer font-bold text-slate-100 animate-bounce hover:animate-none transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:-translate-y-2 hover:scale-105 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-blue-400 hover:via-cyan-300 hover:to-indigo-400 hover:drop-shadow-[0_0_25px_rgba(56,189,248,0.85)]">
+                  Leevy Otieno
+                </span>{" "}
+                — a software engineer specializing in Python, Django, Flask,
+                React, Next.js, TypeScript, and WordPress. I build scalable,
+                performant web applications that users love.
               </p>
             </div>
 
             {/* CTAs */}
-            <div className="flex flex-wrap gap-4 animate-fade-in animation-delay-300">
-              <Button size="lg">
-                Contact Me <ArrowRight className="w-5 h-5" />
-              </Button>
+            <div className="flex flex-wrap items-center gap-4 animate-fade-in animation-delay-300">
+              {/* Glowing Animated Contact Me Button */}
+              <div className="relative group">
+                <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-600 via-cyan-400 to-indigo-600 rounded-xl blur-md opacity-80 group-hover:opacity-100 transition duration-500 group-hover:duration-200 animate-pulse" />
+
+                <a href="#contact" className="block">
+                  <Button
+                    size="lg"
+                    className="relative bg-slate-950 hover:bg-slate-900 text-white font-medium px-6 py-3 rounded-xl transition-all duration-300 border border-blue-500/40 flex items-center gap-2 group-hover:text-blue-200 shadow-xl"
+                  >
+                    Contact Me{" "}
+                    <ArrowRight className="w-5 h-5 text-cyan-400 transition-transform duration-300 group-hover:translate-x-1" />
+                  </Button>
+                </a>
+              </div>
+
+              {/* Animated Border Button for Resume */}
               <AnimatedBorderButton>
                 <a
                   href="/mycv.docx"
                   download
-                  className="inline-flex items-center gap-2"
+                  className="inline-flex items-center gap-2 text-slate-200 hover:text-blue-300 transition-colors"
                 >
-                  <span>Read My Resume </span>
+                  <span>Read My Resume</span>
                 </a>
               </AnimatedBorderButton>
             </div>
 
-            {/* Social Links */}
+            {/* Social Links with Hover Effects */}
             <div className="flex items-center gap-4 animate-fade-in animation-delay-400">
-              <span className="text-sm text-muted-foreground">Follow me: </span>
+              <span className="text-sm text-slate-400">Follow me: </span>
               {[
                 { icon: Github, href: "https://github.com/Leevy-Otieno" },
                 {
@@ -135,43 +157,44 @@ export const Hero = () => {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all duration-300"
+                  className="relative p-2.5 rounded-full bg-slate-900/80 border border-slate-800 text-slate-300 hover:border-blue-500/60 hover:text-cyan-300 hover:bg-slate-800/90 hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300 group"
                 >
-                  {<social.icon className="w-5 h-5" />}
+                  <social.icon className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" />
                 </a>
               ))}
             </div>
           </div>
-          {/* Right Column - Profile Image */}
-          <div className="relatice animate-fade-in animation-delay-300">
-            {/* Profile Image */}
-            <div className="relative max-w-md mx-auto">
-              <div
-                className="absolute inset-0 
-              rounded-3xl bg-gradient-to-br 
-              from-primary/30 via-transparent 
-              to-primary/10 blur-2xl animate-pulse"
-              />
-              <div className="relative glass rounded-3xl p-2 glow-border">
+
+          {/* Right Column - Profile Image with Hover Bounce */}
+          <div className="relative animate-fade-in animation-delay-300">
+            <div className="relative max-w-md mx-auto group cursor-pointer">
+              {/* Animated Outer Blue Glow Backdrop */}
+              <div className="absolute -inset-1 rounded-3xl bg-gradient-to-tr from-blue-600 via-cyan-400 to-indigo-600 opacity-60 blur-xl group-hover:opacity-100 group-hover:blur-2xl transition-all duration-500 animate-pulse" />
+
+              {/* Glass Frame Container with Gentle Bounce Transition on Hover */}
+              <div className="relative bg-slate-900/90 backdrop-blur-md rounded-3xl p-2.5 border border-blue-500/40 shadow-2xl shadow-blue-950/50 transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:-translate-y-4 group-hover:scale-[1.02] group-hover:shadow-blue-500/30 group-hover:border-blue-400">
                 <img
                   src="/porfolioprofile.jpg"
                   alt="Leevy Otieno"
-                  className="w-full aspect-[4/5] object-cover rounded-2xl"
+                  className="w-full aspect-[4/5] object-cover rounded-2xl transition-transform duration-500 group-hover:scale-[1.01]"
                 />
 
-                {/* Floating Badge */}
-                <div className="absolute -bottom-4 -right-4 glass rounded-xl px-4 py-3 animate-float">
+                {/* Availability Badge */}
+                <div className="absolute -bottom-4 -right-4 bg-slate-900/95 backdrop-blur-md border border-slate-800 rounded-xl px-4 py-3 shadow-xl animate-float group-hover:border-blue-500/30 transition-colors">
                   <div className="flex items-center gap-3">
-                    <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
-                    <span className="text-sm font-medium">
+                    <div className="w-3 h-3 bg-emerald-400 rounded-full animate-pulse shadow-sm shadow-emerald-400/50" />
+                    <span className="text-sm font-medium text-slate-100">
                       Available for work
                     </span>
                   </div>
                 </div>
-                {/* Stats Badge */}
-                <div className="absolute -top-4 -left-4 glass rounded-xl px-4 py-3 animate-float animation-delay-500">
-                  <div className="text-2xl font-bold text-primary">5+</div>
-                  <div className="text-xs text-muted-foreground">
+
+                {/* Experience Badge */}
+                <div className="absolute -top-4 -left-4 bg-slate-900/95 backdrop-blur-md border border-slate-800 rounded-xl px-4 py-3 shadow-xl animate-float animation-delay-500 group-hover:border-blue-500/30 transition-colors">
+                  <div className="text-2xl font-bold text-blue-400 drop-shadow-[0_0_10px_rgba(96,165,250,0.5)]">
+                    5+
+                  </div>
+                  <div className="text-xs text-slate-400 font-medium">
                     Years Exp.
                   </div>
                 </div>
@@ -182,22 +205,17 @@ export const Hero = () => {
 
         {/* Skills Section */}
         <div className="mt-20 animate-fade-in animation-delay-600">
-          <p className="text-sm text-muted-foreground mb-6 text-center">
+          <p className="text-sm text-slate-400 mb-6 text-center tracking-wide uppercase font-medium">
             Technologies I work with
           </p>
           <div className="relative overflow-hidden">
-            <div
-              className="absolute left-0 top-0 bottom-0 w-32
-             bg-gradient-to-r from-background to-transparent z-10"
-            />
-            <div
-              className="absolute right-0 top-0 bottom-0 w-32
-             bg-gradient-to-l from-background to-transparent z-10"
-            />
+            <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-slate-950 to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-slate-950 to-transparent z-10 pointer-events-none" />
+
             <div className="flex animate-marquee">
               {[...skills, ...skills].map((skill, idx) => (
                 <div key={idx} className="flex-shrink-0 px-8 py-4">
-                  <span className="text-xl font-semibold text-muted-foreground/50 hover:text-muted-foreground transition-colors">
+                  <span className="text-xl font-semibold text-slate-500 hover:text-blue-400 transition-colors cursor-default">
                     {skill}
                   </span>
                 </div>
@@ -207,16 +225,16 @@ export const Hero = () => {
         </div>
       </div>
 
-      <div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 
-      animate-fade-in animation-delay-800"
-      >
+      {/* Scroll Down Indicator */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-fade-in animation-delay-800">
         <a
           href="#about"
-          className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors group"
+          className="flex flex-col items-center gap-2 text-slate-400 hover:text-blue-400 transition-colors group"
         >
-          <span className="text-xs uppercase tracking-wider">Scroll</span>
-          <ChevronDown className="w-6 h-6 animate-bounce" />
+          <span className="text-xs uppercase tracking-wider font-medium">
+            Scroll
+          </span>
+          <ChevronDown className="w-6 h-6 animate-bounce text-blue-400" />
         </a>
       </div>
     </section>

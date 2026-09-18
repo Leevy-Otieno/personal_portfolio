@@ -28,26 +28,26 @@ const highlights = [
 
 export const About = () => {
   return (
-    <section id="about" className="py-32 relative overflow-hidden">
+    <section id="about" className="py-32 relative overflow-hidden bg-slate-950 text-slate-100">
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Column */}
           <div className="space-y-8">
             <div className="animate-fade-in">
-              <span className="text-secondary-foreground text-sm font-medium tracking-wider uppercase">
+              <span className="text-blue-400 text-sm font-medium tracking-wider uppercase">
                 About Me
               </span>
             </div>
 
-            <h2 className="text-4xl md:text-5xl font-bold leading-tight animate-fade-in animation-delay-100 text-secondary-foreground">
+            <h2 className="text-4xl md:text-5xl font-bold leading-tight animate-fade-in animation-delay-100 text-slate-100">
               Building the future,
-              <span className="font-serif italic font-normal text-white">
+              <span className="font-serif italic font-normal text-blue-300">
                 {" "}
                 one component at a time.
               </span>
             </h2>
 
-            <div className="space-y-4 text-muted-foreground animate-fade-in animation-delay-200">
+            <div className="space-y-4 text-slate-300 animate-fade-in animation-delay-200">
               <p>
                 I'm a passionate software engineer with over 5 years of
                 experience crafting high-performance digital products. My
@@ -68,8 +68,8 @@ export const About = () => {
               </p>
             </div>
 
-            <div className="glass rounded-2xl p-6 glow-border animate-fade-in animation-delay-300">
-              <p className="text-lg font-medium italic text-foreground">
+            <div className="bg-slate-900/80 border border-slate-800 backdrop-blur-md rounded-2xl p-6 shadow-lg shadow-blue-950/20 animate-fade-in animation-delay-300">
+              <p className="text-lg font-medium italic text-slate-200">
                 "My mission is to create digital experiences that are not just
                 functional, but truly delightful — products that users love to
                 use and developers love to maintain."
@@ -77,19 +77,19 @@ export const About = () => {
             </div>
           </div>
 
-          {/* Right Column - Hilights */}
+          {/* Right Column - Highlights */}
           <div className="grid sm:grid-cols-2 gap-6">
             {highlights.map((item, idx) => (
               <div
                 key={idx}
-                className="glass p-6 rounded-2xl animate-fade-in"
+                className="bg-slate-900/70 border border-slate-800/80 backdrop-blur-md p-6 rounded-2xl hover:border-blue-500/40 hover:bg-slate-900 transition-all duration-300 shadow-md animate-fade-in"
                 style={{ animationDelay: `${(idx + 1) * 100}ms` }}
               >
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 hover:bg-primary/20">
-                  <item.icon className="w-6 h-6 text-primary" />
+                <div className="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center mb-4 hover:bg-blue-500/20 transition-colors">
+                  <item.icon className="w-6 h-6 text-blue-400" />
                 </div>
-                <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
-                <p className="text-sm text-muted-foreground">
+                <h3 className="text-lg font-semibold mb-2 text-slate-100">{item.title}</h3>
+                <p className="text-sm text-slate-400">
                   {item.description}
                 </p>
               </div>
