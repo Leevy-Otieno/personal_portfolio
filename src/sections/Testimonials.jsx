@@ -15,7 +15,7 @@ const testimonials = [
     quote:
       "Leevy's attention to UI/UX detail and robust backend architecture gave our platform the exact high-end polish we needed. Highly professional and exceptionally skilled!",
     author: "Hillary",
-    role: "Seniour Social Worker",
+    role: "Seniour CAse Manager",
     company: "NRCF",
     avatar: "/avatars/NRCFlogo.png",
     rating: 4,
