@@ -60,17 +60,14 @@ const teaserPrompts = [
   "😂 Leevy made me have such a good day! Click me! ✨",
   "🤖 Wanna hear a hilarious programming joke right now? 🤣",
   "💡 Hey there! Want a cool computer fact or a good laugh?",
-  "🚀 Tap me to take a quick tour of Leevy's portfolio!",
+  "🚀 Tap me to take a quick tour of Leevy's portfolio!"
 ];
 
 export const Hero = () => {
   // Chatbot State
   const [isChatOpen, setIsChatOpen] = useState(false);
   const [messages, setMessages] = useState([
-    {
-      sender: "bot",
-      text: "HAHA! 😂 I'm laughing because Leevy made me have such a good day! I'm Leevy's friend, and I'm here to share those good vibes with you. Want to hear more jokes, learn a cool computer fact, or take a tour of his portfolio?",
-    },
+    { sender: "bot", text: "HAHA! 😂 I'm laughing because Leevy made me have such a good day! I'm Leevy's friend, and I'm here to share those good vibes with you. Want to hear more jokes, learn a cool computer fact, or take a tour of his portfolio?" }
   ]);
 
   // Click tracking states for dynamic button text
@@ -105,12 +102,10 @@ export const Hero = () => {
   const handleJokeAction = async () => {
     setHasClickedJoke(true);
     try {
-      const response = await fetch(
-        "https://v2.jokeapi.dev/joke/Programming?safe-mode",
-      );
+      const response = await fetch("https://v2.jokeapi.dev/joke/Programming?safe-mode");
       if (!response.ok) throw new Error("Failed to fetch programming joke");
       const data = await response.json();
-
+      
       let jokeText = "";
       if (data.type === "single") {
         jokeText = `${data.joke} 💻`;
@@ -121,15 +116,14 @@ export const Hero = () => {
       setMessages((prev) => [
         ...prev,
         { sender: "user", text: "Wanna hear a joke! 😄" },
-        { sender: "bot", text: `HAHA! Here you go: ${jokeText}` },
+        { sender: "bot", text: `HAHA! Here you go: ${jokeText}` }
       ]);
     } catch (error) {
-      const randomJoke =
-        fallbackJokes[Math.floor(Math.random() * fallbackJokes.length)];
+      const randomJoke = fallbackJokes[Math.floor(Math.random() * fallbackJokes.length)];
       setMessages((prev) => [
         ...prev,
         { sender: "user", text: "Wanna hear a joke! 😄" },
-        { sender: "bot", text: `HAHA! Here you go: ${randomJoke}` },
+        { sender: "bot", text: `HAHA! Here you go: ${randomJoke}` }
       ]);
     }
   };
@@ -137,24 +131,21 @@ export const Hero = () => {
   const handleFactAction = async () => {
     setHasClickedFact(true);
     try {
-      const response = await fetch(
-        "https://uselessfacts.jsph.pl/api/v2/facts/random?language=en",
-      );
+      const response = await fetch("https://uselessfacts.jsph.pl/api/v2/facts/random?language=en");
       if (!response.ok) throw new Error("Failed to fetch fact");
       const data = await response.json();
 
       setMessages((prev) => [
         ...prev,
         { sender: "user", text: "Tell me an interesting fact! 🧠" },
-        { sender: "bot", text: `${data.text} 💡` },
+        { sender: "bot", text: `${data.text} 💡` }
       ]);
     } catch (error) {
-      const randomFact =
-        fallbackFacts[Math.floor(Math.random() * fallbackFacts.length)];
+      const randomFact = fallbackFacts[Math.floor(Math.random() * fallbackFacts.length)];
       setMessages((prev) => [
         ...prev,
         { sender: "user", text: "Tell me an interesting fact! 🧠" },
-        { sender: "bot", text: randomFact },
+        { sender: "bot", text: randomFact }
       ]);
     }
   };
@@ -163,10 +154,7 @@ export const Hero = () => {
     setMessages((prev) => [
       ...prev,
       { sender: "user", text: `Take me to ${sectionName} 🚀` },
-      {
-        sender: "bot",
-        text: `Whipping you over to the ${sectionName} section right now!`,
-      },
+      { sender: "bot", text: `Whipping you over to the ${sectionName} section right now!` }
     ]);
     setTimeout(() => {
       const section = document.getElementById(sectionId);
@@ -451,11 +439,10 @@ export const Hero = () => {
                 </div>
                 <div>
                   <h3 className="font-bold text-sm sm:text-base flex items-center gap-1.5 drop-shadow-sm">
-                    😂 LeevyStack{" "}
-                    <Sparkles className="w-4 h-4 text-yellow-300 animate-spin" />
+                    😂 LeevyStack <Sparkles className="w-4 h-4 text-yellow-300 animate-spin" />
                   </h3>
                   <p className="text-[11px] text-cyan-100 font-medium tracking-wide">
-                    Oops!🤭I'm still laughing. Can't help it. He made me
+                    Oops!🤭 I'm still laughing, Sorry. 
                   </p>
                 </div>
               </div>
@@ -500,7 +487,7 @@ export const Hero = () => {
                   className="relative group/btn py-2.5 px-3 bg-gradient-to-r from-cyan-500/20 to-blue-600/30 hover:from-cyan-500/40 hover:to-blue-600/50 border border-cyan-400/60 rounded-xl text-xs font-bold text-cyan-200 hover:text-white transition-all duration-300 flex items-center justify-center gap-1.5 active:scale-95 shadow-lg shadow-cyan-500/10 hover:shadow-cyan-400/30 overflow-hidden"
                 >
                   <span className="absolute inset-0 bg-cyan-400/10 opacity-0 group-hover/btn:opacity-100 transition-opacity" />
-                  <Laugh className="w-4 h-4 text-yellow-300 group-hover/btn:rotate-12 transition-transform animate-bounce" />
+                  <Laugh className="w-4 h-4 text-yellow-300 group-hover/btn:rotate-12 transition-transform animate-bounce" /> 
                   {hasClickedJoke ? "Another joke" : "Wanna hear a joke"}
                 </button>
 
@@ -509,7 +496,7 @@ export const Hero = () => {
                   className="relative group/btn py-2.5 px-3 bg-gradient-to-r from-indigo-500/20 to-purple-600/30 hover:from-indigo-500/40 hover:to-purple-600/50 border border-indigo-400/60 rounded-xl text-xs font-bold text-indigo-200 hover:text-white transition-all duration-300 flex items-center justify-center gap-1.5 active:scale-95 shadow-lg shadow-indigo-500/10 hover:shadow-indigo-400/30 overflow-hidden"
                 >
                   <span className="absolute inset-0 bg-indigo-400/10 opacity-0 group-hover/btn:opacity-100 transition-opacity" />
-                  <Cpu className="w-4 h-4 text-cyan-300 group-hover/btn:scale-110 transition-transform animate-pulse" />
+                  <Cpu className="w-4 h-4 text-cyan-300 group-hover/btn:scale-110 transition-transform animate-pulse" /> 
                   {hasClickedFact ? "Another fact" : "Interesting fact"}
                 </button>
               </div>
@@ -532,15 +519,13 @@ export const Hero = () => {
                   onClick={() => handleNavigate("projects", "Projects")}
                   className="py-2 px-2 bg-slate-800/80 hover:bg-cyan-950/60 border border-slate-700 hover:border-cyan-400/60 rounded-xl text-[10px] sm:text-[11px] font-semibold text-slate-200 hover:text-cyan-300 transition-all duration-300 flex items-center justify-center gap-1 shadow-sm"
                 >
-                  <Briefcase className="w-3 h-3 text-blue-400 shrink-0" />{" "}
-                  Projects
+                  <Briefcase className="w-3 h-3 text-blue-400 shrink-0" /> Projects
                 </button>
                 <button
                   onClick={() => handleNavigate("testimonials", "Testimonials")}
                   className="py-2 px-2 bg-slate-800/80 hover:bg-cyan-950/60 border border-slate-700 hover:border-cyan-400/60 rounded-xl text-[10px] sm:text-[11px] font-semibold text-slate-200 hover:text-cyan-300 transition-all duration-300 flex items-center justify-center gap-1 shadow-sm"
                 >
-                  <MessageSquare className="w-3 h-3 text-indigo-400 shrink-0" />{" "}
-                  Reviews
+                  <MessageSquare className="w-3 h-3 text-indigo-400 shrink-0" /> Reviews
                 </button>
                 <button
                   onClick={() => handleNavigate("contact", "Contact")}
@@ -568,7 +553,7 @@ export const Hero = () => {
           >
             {/* Glowing Aura Hover Ring */}
             <span className="absolute -inset-2 rounded-full bg-cyan-400 opacity-60 blur-md group-hover:opacity-100 transition duration-500 animate-pulse" />
-
+            
             {/* Constantly shaking/laughing 😂 emoji avatar */}
             <div className="relative z-10 w-10 h-10 rounded-full bg-slate-950/90 border-2 border-yellow-300 flex items-center justify-center shadow-inner group-hover:bg-cyan-950 transition-colors text-2xl select-none animate-pulse">
               😂
