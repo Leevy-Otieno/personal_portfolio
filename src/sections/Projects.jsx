@@ -69,32 +69,32 @@ const projects = [
 
 export const Projects = () => {
   return (
-    <section id="projects" className="py-32 relative overflow-hidden bg-slate-950 text-slate-100">
+    <section id="projects" className="py-24 sm:py-32 relative overflow-hidden bg-slate-950 text-slate-100">
       {/* Background Glowing Ambient Spheres */}
-      <div className="absolute top-1/4 right-0 w-96 h-96 bg-blue-600/15 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-1/4 left-0 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/4 right-0 w-72 sm:w-96 h-72 sm:h-96 bg-blue-600/15 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-1/4 left-0 w-64 sm:w-80 h-64 sm:h-80 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
         {/* Section Header */}
-        <div className="text-center mx-auto max-w-3xl mb-16">
+        <div className="text-center mx-auto max-w-3xl mb-12 sm:mb-16">
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900/80 border border-blue-500/30 text-xs font-medium tracking-wider uppercase text-blue-400 backdrop-blur-md shadow-md shadow-blue-950/30 animate-fade-in">
             <span className="w-1.5 h-1.5 bg-blue-400 rounded-full animate-pulse shadow-sm shadow-blue-400" />
             Featured Work
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 animate-fade-in animation-delay-100 text-slate-100">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-4 mb-6 animate-fade-in animation-delay-100 text-slate-100 px-2">
             High-performance code that{" "}
             <span className="font-serif italic font-normal text-blue-400 drop-shadow-[0_0_20px_rgba(96,165,250,0.35)]">
               drives business goals.
             </span>
           </h2>
-          <p className="text-slate-300 animate-fade-in animation-delay-200 leading-relaxed">
+          <p className="text-slate-300 text-sm sm:text-base animate-fade-in animation-delay-200 leading-relaxed px-2">
             A selection of my recent work, from complex web applications to
             innovative tools that solve real-world problems.
           </p>
         </div>
 
         {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
           {projects.map((project, idx) => {
             const hasValidGithub =
               project.github && project.github.trim() !== "" && project.github !== "#";
@@ -109,7 +109,7 @@ export const Projects = () => {
                 <div className="absolute -inset-0.5 rounded-2xl bg-gradient-to-r from-blue-600 via-cyan-400 to-indigo-600 opacity-0 group-hover:opacity-100 transition-all duration-500 blur-md pointer-events-none" />
 
                 {/* Card Container with Spring Lift Transition */}
-                <div className="relative z-10 flex flex-col h-full bg-slate-900/90 backdrop-blur-md rounded-2xl border border-slate-800/80 group-hover:border-blue-400/80 overflow-hidden shadow-xl shadow-slate-950/50 transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:-translate-y-3 group-hover:scale-[1.01] group-hover:shadow-2xl group-hover:shadow-blue-500/20">
+                <div className="relative z-10 flex flex-col h-full bg-slate-900/90 backdrop-blur-md rounded-2xl border border-slate-800/80 group-hover:border-blue-400/80 overflow-hidden shadow-xl shadow-slate-950/50 transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:-translate-y-2 sm:group-hover:-translate-y-3 group-hover:scale-[1.01] group-hover:shadow-2xl group-hover:shadow-blue-500/20">
                   {/* Image Container */}
                   <div className="relative overflow-hidden aspect-video bg-slate-950">
                     <img
@@ -147,7 +147,7 @@ export const Projects = () => {
                   </div>
 
                   {/* Content Container */}
-                  <div className="p-6 space-y-4 flex flex-col justify-between flex-grow">
+                  <div className="p-5 sm:p-6 space-y-4 flex flex-col justify-between flex-grow">
                     <div className="space-y-3">
                       <div className="flex items-start justify-between gap-4">
                         <a
@@ -156,7 +156,7 @@ export const Projects = () => {
                           rel="noopener noreferrer"
                           className="group/title flex items-center gap-2"
                         >
-                          <h3 className="text-xl font-bold text-slate-100 group-hover/title:text-blue-400 transition-colors">
+                          <h3 className="text-lg sm:text-xl font-bold text-slate-100 group-hover/title:text-blue-400 transition-colors">
                             {project.title}
                           </h3>
                         </a>
@@ -164,12 +164,12 @@ export const Projects = () => {
                           href={project.link}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="p-1 rounded-md text-slate-400 group-hover:text-cyan-400 transition-colors"
+                          className="p-1 rounded-md text-slate-400 group-hover:text-cyan-400 transition-colors shrink-0"
                         >
                           <ArrowUpRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
                         </a>
                       </div>
-                      <p className="text-slate-300 text-sm leading-relaxed">
+                      <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">
                         {project.description}
                       </p>
                     </div>
@@ -179,7 +179,7 @@ export const Projects = () => {
                       {project.tags.map((tag, tagIdx) => (
                         <span
                           key={tagIdx}
-                          className="px-3.5 py-1 rounded-full bg-slate-950/80 text-xs font-medium border border-slate-800 text-slate-300 group-hover:border-blue-500/40 group-hover:text-blue-300 transition-all duration-300"
+                          className="px-3 py-1 rounded-full bg-slate-950/80 text-[11px] sm:text-xs font-medium border border-slate-800 text-slate-300 group-hover:border-blue-500/40 group-hover:text-blue-300 transition-all duration-300"
                         >
                           {tag}
                         </span>
@@ -193,13 +193,13 @@ export const Projects = () => {
         </div>
 
         {/* View All CTA */}
-        <div className="text-center mt-16 animate-fade-in animation-delay-500">
+        <div className="text-center mt-12 sm:mt-16 animate-fade-in animation-delay-500">
           <AnimatedBorderButton>
             <a
               href="https://github.com/Leevy-Otieno"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-slate-200 hover:text-blue-300 transition-colors font-medium"
+              className="inline-flex items-center gap-2 text-slate-200 hover:text-blue-300 transition-colors font-medium text-sm sm:text-base"
             >
               <span>View All Projects</span>
               <ArrowUpRight className="w-5 h-5 text-cyan-400" />

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Button } from "@/components/Button";
 import {
   ArrowRight,
@@ -8,6 +9,15 @@ import {
   Instagram,
   FileText,
   Download,
+  X,
+  Sparkles,
+  Send,
+  User,
+  Briefcase,
+  MessageSquare,
+  Laugh,
+  Cpu,
+  Clock,
 } from "lucide-react";
 import { AnimatedBorderButton } from "../components/AnimatedBorderButton";
 
@@ -34,7 +44,74 @@ const skills = [
   "GitHub Actions",
 ];
 
+const endlessJokes = [
+  "Why do programmers prefer dark mode? Because light attracts bugs! 🐛",
+  "A SQL query walks into a bar, walks up to two tables and asks: 'Can I join you?' 🍻",
+  "Why do Java developers wear glasses? Because they don't C#! 👓",
+  "There are 10 types of people in the world: those who understand binary, and those who don't. 🤖",
+  "How many programmers does it take to change a lightbulb? None, that's a hardware problem! 💡",
+  "Why did the developer go broke? Because he used up all his cache! 💸",
+  "Why do Python programmers wear tight glasses? Because they don't use braces! 🐍",
+  "There are two hard things in computer science: cache invalidation and naming things. And off-by-one errors. 🔢",
+  "What is a programmer's favorite hangout place? Foo Bar! 🍹",
+  "Bugs come in through the open Windows. 🪟",
+  "Why did the database administrator leave his wife? Because she had too many relationships! 💔",
+  "Real programmers count from 0. 🎯"
+];
+
+const infiniteComputerFacts = [
+  "The first computer mouse, invented by Douglas Engelbart in 1964, was made of carved wood! 🖱️",
+  "The Apollo 11 Guidance Computer that landed humans on the moon had only about 64KB of memory—millions of times less than a modern smartphone! 🚀",
+  "The term 'computer bug' originated in 1947 when Grace Hopper and her team found an actual moth trapped inside the Relay calculator. 🦋",
+  "More than 80% of all currency in the world exists purely as digital data on computer servers rather than physical cash! 💳",
+  "The first-ever hard drive, created by IBM in 1956, weighed over a ton and could store a mere 5 megabytes of data. 🗄️",
+  "The QWERTY keyboard layout was originally engineered to slow down typists so mechanical typewriter keys wouldn't jam together! ⌨️",
+  "Every second, Google handles over 8.5 million searches worldwide, powered by massive data centers cooling servers globally. 🌍",
+  "The email protocol (@ symbol) was chosen by Ray Tomlinson in 1971 simply because it was rarely used in people's names or words. ✉️"
+];
+
 export const Hero = () => {
+  // Chatbot State
+  const [isChatOpen, setIsChatOpen] = useState(false);
+  const [messages, setMessages] = useState([
+    { sender: "bot", text: "HAHA! 😂 I'm laughing because Leevy made me have such a good day! I'm Leevy's friend, and I'm here to share those good vibes with you. Want to hear more jokes, learn a cool computer fact, or take a tour of his portfolio?" }
+  ]);
+
+  const handleAnotherJoke = () => {
+    const randomJoke = endlessJokes[Math.floor(Math.random() * endlessJokes.length)];
+    setMessages((prev) => [
+      ...prev,
+      { sender: "user", text: "Another joke! 😄" },
+      { sender: "bot", text: `HAHA! Here is another one: ${randomJoke}` }
+    ]);
+  };
+
+  const handleComputerFact = () => {
+    const randomFact = infiniteComputerFacts[Math.floor(Math.random() * infiniteComputerFacts.length)];
+    setMessages((prev) => [
+      ...prev,
+      { sender: "user", text: "Tell me an interesting computer fact! 🧠" },
+      { sender: "bot", text: randomFact }
+    ]);
+  };
+
+  const handleNavigate = (sectionId, sectionName) => {
+    setMessages((prev) => [
+      ...prev,
+      { sender: "user", text: `Take me to ${sectionName} 🚀` },
+      { sender: "bot", text: `Whipping you over to the ${sectionName} section right now!` }
+    ]);
+    setTimeout(() => {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      } else {
+        window.location.href = `#${sectionId}`;
+      }
+      setIsChatOpen(false);
+    }, 800);
+  };
+
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-slate-950 text-slate-100">
       {/* Background Overlay */}
@@ -289,6 +366,144 @@ export const Hero = () => {
           </span>
           <ChevronDown className="w-6 h-6 animate-bounce text-blue-400" />
         </a>
+      </div>
+
+      {/* ================= UNIVERSAL RESPONSIVE LAUGHING LEEVYSTACK WIDGET ================= */}
+      <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex flex-col items-end">
+        {/* Chat Dialog Box */}
+        {isChatOpen && (
+          <div className="mb-3 w-[88vw] sm:w-[380px] md:w-[420px] bg-slate-900/98 backdrop-blur-2xl border-2 border-cyan-400/60 rounded-3xl shadow-2xl shadow-cyan-950/95 overflow-hidden animate-fade-in flex flex-col max-h-[540px]">
+            {/* Header */}
+            <div className="relative group bg-gradient-to-r from-blue-600 via-cyan-500 to-indigo-600 hover:from-blue-500 hover:via-cyan-400 hover:to-indigo-500 p-4 flex items-center justify-between text-white transition-all duration-500 shadow-md">
+              <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+              <div className="relative z-10 flex items-center gap-3">
+                <div className="relative w-9 h-9 rounded-full bg-slate-950/70 border-2 border-yellow-300 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                  <span className="absolute -top-1 -right-1 w-3 h-3 bg-emerald-400 rounded-full animate-ping" />
+                  <Laugh className="w-5 h-5 text-yellow-300 animate-bounce" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-sm sm:text-base flex items-center gap-1.5 drop-shadow-sm">
+                    😂 LeevyStack <Sparkles className="w-4 h-4 text-yellow-300 animate-spin" />
+                  </h3>
+                  <p className="text-[11px] text-cyan-100 font-medium tracking-wide">
+                    Leevy's Laughing Friend
+                  </p>
+                </div>
+              </div>
+              <button
+                onClick={() => setIsChatOpen(false)}
+                className="relative z-10 p-2 rounded-xl bg-white/10 hover:bg-white/30 transition-all text-white active:scale-95"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            </div>
+
+            {/* Messages Container */}
+            <div className="p-4 sm:p-5 overflow-y-auto space-y-3.5 flex-1 text-sm max-h-[240px] scrollbar-thin scrollbar-thumb-cyan-500/40">
+              {messages.map((msg, idx) => (
+                <div
+                  key={idx}
+                  className={`flex ${
+                    msg.sender === "user" ? "justify-end" : "justify-start"
+                  }`}
+                >
+                  <div
+                    className={`max-w-[88%] p-3.5 rounded-2xl text-xs sm:text-sm leading-relaxed shadow-lg ${
+                      msg.sender === "user"
+                        ? "bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-br-none font-medium shadow-blue-500/20"
+                        : "bg-slate-800/95 border border-cyan-500/40 text-slate-100 rounded-bl-none shadow-cyan-950/50"
+                    }`}
+                  >
+                    {msg.text}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Interactive Action Buttons */}
+            <div className="p-3.5 sm:p-4 bg-slate-950/95 border-t border-slate-800 flex flex-col gap-2.5">
+              {/* Row 1: Joke & Computer Fact Buttons */}
+              <div className="grid grid-cols-2 gap-2">
+                <button
+                  onClick={handleAnotherJoke}
+                  className="relative group/btn py-2.5 px-3 bg-gradient-to-r from-cyan-500/20 to-blue-600/30 hover:from-cyan-500/40 hover:to-blue-600/50 border border-cyan-400/60 rounded-xl text-xs font-bold text-cyan-200 hover:text-white transition-all duration-300 flex items-center justify-center gap-1.5 active:scale-95 shadow-lg shadow-cyan-500/10 hover:shadow-cyan-400/30 overflow-hidden"
+                >
+                  <span className="absolute inset-0 bg-cyan-400/10 opacity-0 group-hover/btn:opacity-100 transition-opacity" />
+                  <Laugh className="w-4 h-4 text-yellow-300 group-hover/btn:rotate-12 transition-transform animate-bounce" /> 
+                  Another Joke
+                </button>
+
+                <button
+                  onClick={handleComputerFact}
+                  className="relative group/btn py-2.5 px-3 bg-gradient-to-r from-indigo-500/20 to-purple-600/30 hover:from-indigo-500/40 hover:to-purple-600/50 border border-indigo-400/60 rounded-xl text-xs font-bold text-indigo-200 hover:text-white transition-all duration-300 flex items-center justify-center gap-1.5 active:scale-95 shadow-lg shadow-indigo-500/10 hover:shadow-indigo-400/30 overflow-hidden"
+                >
+                  <span className="absolute inset-0 bg-indigo-400/10 opacity-0 group-hover/btn:opacity-100 transition-opacity" />
+                  <Cpu className="w-4 h-4 text-cyan-300 group-hover/btn:scale-110 transition-transform animate-pulse" /> 
+                  Computer Fact
+                </button>
+              </div>
+
+              {/* Row 2: Page Navigation Bar (Includes Experience Section Now) */}
+              <div className="grid grid-cols-3 sm:grid-cols-5 gap-1.5 pt-1">
+                <button
+                  onClick={() => handleNavigate("about", "About")}
+                  className="py-2 px-2 bg-slate-800/80 hover:bg-cyan-950/60 border border-slate-700 hover:border-cyan-400/60 rounded-xl text-[10px] sm:text-[11px] font-semibold text-slate-200 hover:text-cyan-300 transition-all duration-300 flex items-center justify-center gap-1 shadow-sm"
+                >
+                  <User className="w-3 h-3 text-cyan-400 shrink-0" /> About
+                </button>
+                <button
+                  onClick={() => handleNavigate("experience", "Experience")}
+                  className="py-2 px-2 bg-slate-800/80 hover:bg-cyan-950/60 border border-slate-700 hover:border-cyan-400/60 rounded-xl text-[10px] sm:text-[11px] font-semibold text-slate-200 hover:text-cyan-300 transition-all duration-300 flex items-center justify-center gap-1 shadow-sm"
+                >
+                  <Clock className="w-3 h-3 text-cyan-300 shrink-0" /> Exp
+                </button>
+                <button
+                  onClick={() => handleNavigate("projects", "Projects")}
+                  className="py-2 px-2 bg-slate-800/80 hover:bg-cyan-950/60 border border-slate-700 hover:border-cyan-400/60 rounded-xl text-[10px] sm:text-[11px] font-semibold text-slate-200 hover:text-cyan-300 transition-all duration-300 flex items-center justify-center gap-1 shadow-sm"
+                >
+                  <Briefcase className="w-3 h-3 text-blue-400 shrink-0" /> Projects
+                </button>
+                <button
+                  onClick={() => handleNavigate("testimonials", "Testimonials")}
+                  className="py-2 px-2 bg-slate-800/80 hover:bg-cyan-950/60 border border-slate-700 hover:border-cyan-400/60 rounded-xl text-[10px] sm:text-[11px] font-semibold text-slate-200 hover:text-cyan-300 transition-all duration-300 flex items-center justify-center gap-1 shadow-sm"
+                >
+                  <MessageSquare className="w-3 h-3 text-indigo-400 shrink-0" /> Reviews
+                </button>
+                <button
+                  onClick={() => handleNavigate("contact", "Contact")}
+                  className="py-2 px-2 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 border border-blue-400/60 rounded-xl text-[10px] sm:text-[11px] font-bold text-white transition-all duration-300 flex items-center justify-center gap-1 shadow-md col-span-3 sm:col-span-1"
+                >
+                  Contact
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Floating Laughing Bot Icon Trigger */}
+        <div className="flex items-center gap-3">
+          {!isChatOpen && (
+            <div className="hidden sm:flex items-center px-4 py-2.5 bg-slate-900/95 backdrop-blur-md border border-cyan-400/50 rounded-2xl shadow-xl text-xs font-semibold text-cyan-200 animate-bounce [animation-duration:2.5s] flex items-center gap-2">
+              😂 Leevy made me have such a good day! Click me! ✨
+            </div>
+          )}
+
+          <button
+            onClick={() => setIsChatOpen(!isChatOpen)}
+            className="relative group p-4 rounded-full bg-gradient-to-tr from-blue-600 via-cyan-400 to-indigo-600 text-white shadow-2xl shadow-cyan-900/80 hover:shadow-cyan-400/90 transition-all duration-300 hover:scale-125 hover:rotate-12 active:scale-95 flex items-center justify-center animate-bounce [animation-duration:2.2s]"
+            aria-label="Toggle Laughing LeevyStack Assistant"
+          >
+            {/* Glowing Aura Hover Ring */}
+            <span className="absolute -inset-2 rounded-full bg-cyan-400 opacity-60 blur-md group-hover:opacity-100 transition duration-500 animate-pulse" />
+            
+            {/* Laughing Bot Avatar */}
+            <div className="relative z-10 w-9 h-9 rounded-full bg-slate-950/90 border-2 border-yellow-300 flex items-center justify-center shadow-inner group-hover:bg-cyan-950 transition-colors">
+              <Laugh className="w-5 h-5 text-yellow-300 drop-shadow-[0_0_8px_rgba(253,224,71,0.9)] animate-pulse" />
+              {/* Online glowing pulse */}
+              <span className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-emerald-400 rounded-full border-2 border-slate-950 animate-ping" />
+            </div>
+          </button>
+        </div>
       </div>
     </section>
   );
