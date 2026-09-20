@@ -455,7 +455,7 @@ export const Hero = () => {
                     <Sparkles className="w-4 h-4 text-yellow-300 animate-spin" />
                   </h3>
                   <p className="text-[11px] text-cyan-100 font-medium tracking-wide">
-                    Leevy's Laughing Friend
+                    Oops!🤭I'm still laughing. Can't help it. He made me
                   </p>
                 </div>
               </div>
